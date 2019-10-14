@@ -22,6 +22,7 @@ member = [
     'Sybil',
     'Ted',
     'Victor',
+    'Walter',
 ]
 
 app = Flask(__name__)
