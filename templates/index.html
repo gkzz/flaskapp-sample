@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+    <h2>{{ h2 }}</h2>
+
+        <div class="table-responsive-md">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Seat No.</th>
+                        <th scope="col">Name</th>
+                    </tr>
+                </thead>
+                {% for key,val in contents %}
+                <tr>
+                    <th scope="row">{{ key }}</th>
+                    <td>{{ val }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+
+        <form action="/post" method="post">
+            <div class="form-group">
+                <h4><label for="name">One More Time?</label></h4>
+            </div>
+            <button type="submit" class="btn btn-primary">CHANGE</button>
+        </form>
+    
+</div>
+
+{% endblock %}
