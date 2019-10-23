@@ -10,19 +10,21 @@ function main () {
   done
 
   if [ ${total}==2 ]; then
-      echo "Successful" 
+      echo $3 
       #true
   else
-      echo "Failed"
+      echo $4
       #false
   fi
 }
+
 
 sudo systemctl daemon-reload
 sudo service gunicorn restart
 sudo service nginx restart
 
 
+
 DAEMON_ACTIVE=`service gunicorn status | grep running`
 NGINX_ACTIVE=`service nginx status | grep running`
-main DAEMON_ACTIVE NGINX_ACTIVE
+main DAEMON_ACTIVE NGINX_ACTIVE "Successful" "FAILED"

@@ -5,5 +5,5 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/flaskapp-sample
-ExecStart=/home/ubuntu/flaskapp-sample/36/bin/gunicorn --workers 3 --bind unix:flaskapp.sock -m 007 app:app
+WorkingDirectory=/opt/flaskapp-sample
+ExecStart=/opt/flaskapp-sample/36/bin/gunicorn --workers 3 --bind unix:flaskapp.sock -m 007 app:app

@@ -1,9 +1,9 @@
 server{
     listen 80;
-    server_name <ip4 public>;
+    server_name ${PUBLIC_IP};
 
     location / {
         #proxy_pass http://127.0.0.1:8000;
-        proxy_pass http://unix:/home/ubuntu/flaskapp-sample/flaskapp.sock;
+        proxy_pass http://unix:/opt/flaskapp-sample/flaskapp.sock;
     }
 }
