@@ -19,13 +19,15 @@
 - ec2, vpc (aws)
 
 # How to setup
+Please modify $PYTHON_VERSION on your environment in install_python.sh
 
 ```
 $ sudo apt-get update -y
-#cd && mkdir flaskapp-sample && cd $_
-$ source install.sh
-$ sudo cp ./config-etc/flaskapp.tmpl /etc/nginx/sites-enabled/flaskapp
-$ sudo cp ./config-etc/gunicorn.service.tmpl /etc/systemd/system/gunicorn.service
+$ mkdir -p /var/lib/jenkins/opt/ && cd $_ && git clone git@github.com:gkzz/flaskapp-sample.git
+# sudo cd flaskapp-sample
+$ source install_python.sh
+$ sudo cp /var/lib/jenkins/opt/flaskapp-sample/config-etc/flaskapp.tmpl /etc/nginx/sites-enabled/flaskapp
+$ sudo cp /var/lib/jenkins/opt/flaskapp-sample/config-etc/gunicorn.service.tmpl /etc/systemd/system/gunicorn.service
 $ sudo systemctl daemon-reload
 $ sudo service gunicorn start
 $ sudo service nginx restart
